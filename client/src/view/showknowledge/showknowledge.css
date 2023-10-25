@@ -1,0 +1,31 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+ }
+
+ input:focus {
+    outline: none;
+ }
+
+ .input-header {
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    border-bottom: 1px solid #dfdfdf;
+ }
+
+ .input-rule {
+   width: 100%;
+   font-size: 16px;
+   border: none;
+   border-bottom: 1px solid #dfdfdf;
+}
+
+.m-f {
+   display: flex;
+   justify-content: space-around;
+}
