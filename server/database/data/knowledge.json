@@ -1,36 +1,64 @@
 [
   {
-    "Id": 0.8912227808068909,
-    "NameRule": "a",
+    "Id": 0.7201319313905511,
+    "NameRule": "อาหาร",
     "Conditions": [
       {
-        "Id": 0.6887327267356702,
-        "Symptom": "aa",
-        "Description": "sas"
+        "Id": 1,
+        "Symptom": "กระทะ",
+        "Description": "ไว้ทอด"
       },
       {
-        "Id": 0.8517397072562338,
-        "Symptom": "aaa",
-        "Description": "sas"
+        "Id": 2,
+        "Symptom": "น้ำมัน",
+        "Description": ""
+      },
+      {
+        "Id": 3,
+        "Symptom": "ไข่",
+        "Description": ""
+      },
+      {
+        "Id": 4,
+        "Symptom": "",
+        "Description": ""
+      },
+      {
+        "Id": 5,
+        "Symptom": "",
+        "Description": ""
       }
     ]
   },
   {
-    "Id": 0.8912227808068909,
-    "NameRule": "b",
+    "Id": 0.4020914519108054,
+    "NameRule": "น้ำ",
     "Conditions": [
       {
-        "Id": 0.6887327267356702,
-        "Symptom": "bb",
-        "Description": "sas"
+        "Id": 1,
+        "Symptom": "โค้ก",
+        "Description": ""
       },
       {
-        "Id": 0.8517397072562338,
-        "Symptom": "bbb",
-        "Description": "sas"
+        "Id": 2,
+        "Symptom": "เป๊ปซี่",
+        "Description": ""
+      },
+      {
+        "Id": 3,
+        "Symptom": "",
+        "Description": ""
+      },
+      {
+        "Id": 4,
+        "Symptom": "",
+        "Description": ""
+      },
+      {
+        "Id": 5,
+        "Symptom": "",
+        "Description": ""
       }
     ]
   }
-] 
-
-
+]

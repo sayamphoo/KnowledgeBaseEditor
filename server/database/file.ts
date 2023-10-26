@@ -5,7 +5,7 @@ const KNOWLEDGE = "./database/data/knowledge.json";
 
 export function Savefile(data: Knowledge[]) {
   const jsonData: string = JSON.stringify(data, null, 2);
-
+  
   fs.writeFile(KNOWLEDGE, jsonData, function (err) {
     if (err) throw err;
     console.log("Saved!");

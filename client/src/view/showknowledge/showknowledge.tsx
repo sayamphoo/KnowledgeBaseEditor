@@ -21,8 +21,10 @@ function ShowKnowledge(): JSX.Element {
     Knowledge[]
   >([]);
 
-  const closeModal = () =>
-    setModalState({ show: false, selectedIndex: modalState.selectedIndex });
+  const closeModal = () => {
+     setModalState({ show: false, selectedIndex: modalState.selectedIndex });
+  }
+   
 
   const handleShow = (index: number) =>
     setModalState({ show: true, selectedIndex: index });
@@ -31,7 +33,7 @@ function ShowKnowledge(): JSX.Element {
     (async () => {
       try {
         const response: AxiosResponse = await axios.get(
-          "http://127.0.0.1:5000/"
+          "http://10.32.99.194:5000/"
         );
         console.log(response.data);
         setKnowledgeData(response.data);
@@ -74,7 +76,7 @@ function ShowKnowledge(): JSX.Element {
   function addKnowledge() {
     const conditions: Condition[] = [];
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 5; i++) {
       conditions.push({
         Id: i,
         Symptom: "",
@@ -152,12 +154,26 @@ function ShowKnowledge(): JSX.Element {
     );
   }
 
-  const deleteKnow = () => {
-    const newData = [...knowledgeData]; // สร้างคัดลอกของ knowledgeData
-    newData.splice(modalState.selectedIndex, 1); // ลบข้อมูลจากคัดลอก
-    setKnowledgeData(newData); // อัปเดตค่าใหม่
+  async function deleteKnow() {
     closeModal();
-  };
+    const newData = [...knowledgeData];
+    const selectedIndex = modalState.selectedIndex; 
+    newData.splice(selectedIndex, 1);
+
+    setKnowledgeData(newData);
+    const newIndex = selectedIndex > 0 ? selectedIndex - 1 : 0;
+    setModalState({ show: false, selectedIndex: newIndex });
+    
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    console.log(newData)
+    axios.put("http://10.32.99.194:5000/save",newData)
+  }
+  
+   function SaveData() {
+    const data = [...knowledgeData]
+    axios.put("http://10.32.99.194:5000/save",data)
+  }
+
   return (
     <>
       <div className="mt-5">
@@ -200,7 +216,10 @@ function ShowKnowledge(): JSX.Element {
             <Button variant="danger" onClick={deleteKnow}>
               Delete
             </Button>
-            <Button variant="primary" onClick={closeModal}>
+            <Button variant="primary" onClick={() => {
+              closeModal()
+              SaveData()
+            }}>
               Save
             </Button>
           </Modal.Footer>

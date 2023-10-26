@@ -9,15 +9,15 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get("/",(req:Request,res:Response) => {
-    console.log(GetKnowledge())
+    // console.log(GetKnowledge())
     res.send(GetKnowledge())
 }) 
 
 app.put("/save",(req:Request,res:Response) => {
     Savefile(req.body)
+    console.log(req.body)
     res.send("success")
 })
-
 
 const PORT:number|string = process.env.PORT || 5000
 

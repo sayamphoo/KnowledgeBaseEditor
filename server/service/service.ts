@@ -1,10 +1,9 @@
 import { LoadFile, Savefile } from "../database/file";
 import { Knowledge, Condition } from "../../client/src/view/model/model";
 
-let data: Knowledge[] = [];
 
 export function GetKnowledge() : Knowledge[]{
-
+  let data: Knowledge[] = [];
   let know: string | null = LoadFile();
   if (typeof know === "string") {
     data = JSON.parse(know);
